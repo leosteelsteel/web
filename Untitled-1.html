@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeoSteel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9b9b9b; /* Color gris minimalista de fondo */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77A6F7 3px solid;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 80px 20px 20px;
+        }
+        .intro {
+            background: #333;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product {
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .cart {
+            margin-top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .cart-item span {
+            margin-right: 10px; /* Espacio entre el precio y el botón */
+        }
+        .cart-item button {
+            background: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cart-total {
+            text-align: right;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+        }
+        .fixed-total {
+            position: sticky;
+            bottom: 0;
+            background: #fff;
+            padding: 10px;
+            border-top: 2px solid #333;
+        }
+        .whatsapp-message {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Efecto de sombra */
+            border: 1px solid #ddd; /* Borde suave */
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>LeoSteel</h1>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#collares">Collares</a></li>
+                <li><a href="#pulseras">Pulseras</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#carrito">Carrito <img src="" alt="" style="width:20px; height:auto;"></a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="inicio" class="intro section">
+        <h2>Bienvenidos a LeoSteel</h2>
+        <p>Descubre la elegancia de nuestros productos de acero inoxidable, diseñados para durar y brillar en cualquier ocasión.</p>
+    </div>
+    <div id="collares" class="container section">
+        <h2>Collares</h2>
+        <div class="products">
+            <div class="product">
+                <img src="imagen 5.jpg" alt="Collar de Acero Inoxidable">
+                <h3>Collar de Acero Inoxidable</h3>
+                <p>Precio: Q25</p>
+                <button onclick="addToCart('Collar de Acero Inoxidable', 25)">Carrito</button>
+            </div>
+            <div class="product">
+                <img src="imagen 6.jpg" alt="Collar de Acero Inoxidable">
+                <h3>Collar Elegante</h3>
+                <p>Precio: Q25</p>
+                <button onclick="addToCart('Collar Elegante', 25)">Carrito</button>
+            </div>
+        </div>
+    </div>
+    <div id="pulseras" class="container section">
+        <h2>Pulseras</h2>
+        <div class="products">
+            <div class="product">
+                <img src="imagen 7.jpg" alt="Pulsera de Acero Inoxidable">
+                <h3>Pulsera de Acero Inoxidable</h3>
+                <p>Precio: Q40</p>
+                <button onclick="addToCart('Pulsera de Acero Inoxidable', 40)">Carrito</button>
+            </div>
+            <div class="product">
+                <img src="imagen 8 .jpg" alt="Pulsera de Acero Inoxidable">
+                <h3>Pulsera Elegante</h3>
+                <p>Precio: Q55</p>
+                <button onclick="addToCart('Pulsera Elegante', 55)">Carrito</button>
+            </div>
+        </div>
+    </div>
+    <div id="productos" class="container section">
+        <h2>Anillos</h2>
+        <div class="products">
+            <div class="product">
+                <img src="imagen 2.jpeg" alt="Conjunto de anillos Inoxidable Negros">
+                <h3>Conjunto de 4 anillos Inoxidable Negros</h3>
+                <p>Precio: Q45</p>
+                <button onclick="addToCart('Conjunto de anillos Inoxidable Negros', 45)">Carrito</button>
+            </div>
+            <div class="product">
+                <img src="imagen 3.jpeg" alt="Conjunto de anillos Inoxidables Blancos">
+                <h3>Conjunto de 4 anillos Inoxidables Blancos</h3>
+                <p>Precio: Q45</p>
+                <button onclick="addToCart('Conjunto de anillos Inoxidables Blancos', 45)">Carrito</button>
+            </div>
+            <div class="product">
+                <img src="imagen 4.jpeg" alt="Par de anillos Blanco/Negro">
+                <h3>Par de anillos Blanco/Negro</h3>
+                <p>Precio: Q20</p>
+                <button onclick="addToCart('Par de anillos Blanco/Negro', 20)">Carrito</button>
+            </div>
+        </div>
+    </div>
+    <div id="carrito" class="container section">
+        <h2>Carrito de Compras</h2>
+        <div id="cart" class="cart"></div>
+        <div id="cart-total" class="cart-total fixed-total"></div>
+        <div class="whatsapp-message">
+            <p>Toma una captura de pantalla de tu carrito y envíala a nuestro WhatsApp para completar la compra.</p>
+            <a href="https://wa.me/00000000000" class="whatsapp-button">Enviar a WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            displayCart();
+        }
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            displayCart();
+        }
+        function displayCart() {
+            let cartContent = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                cartContent += `
+                    <div class="cart-item">
+                        <span>${item.product}</span>
+                        <span>Q${item.price}</span>
+                        <button onclick="removeFromCart(${index})">Eliminar</button>
+                    </div>`;
+                total += item.price;
+            });
+            document.getElementById('cart').innerHTML = cartContent;
+            document.getElementById('cart-total').innerHTML = `<strong>Total: Q${total}</strong>`;
+        }
+    </script>
+</body>
+</html>
